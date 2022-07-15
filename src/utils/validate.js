@@ -127,3 +127,14 @@ exports.searchDepartment = async(name)=>{
         return err;
     }
 }
+
+exports.searchTrip = async(name)=>{
+    try{
+        const trip = await Trip.findOne({name: name});
+        if(!trip) return false
+        return trip;
+    }catch(err){
+        console.log(err);
+        return err;
+    }
+}
