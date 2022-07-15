@@ -1,0 +1,33 @@
+{
+  "name": "proyectofinal-back",
+  "version": "1.0.0",
+  "description": "Proyecto final Viajes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryuman-2020165/ProyectoFinal-Back.git"
+  },
+  "author": "Grupo #2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryuman-2020165/ProyectoFinal-Back/issues"
+  },
+  "homepage": "https://github.com/ryuman-2020165/ProyectoFinal-Back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.20.0",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.4",
+    "mongoose": "^6.4.4"
+  }
+}
