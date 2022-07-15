@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 exports.init = () => {
-    const uriMongo = 'mongodb://127.0.0.1:27017/proyectoFinal';
+    const uriMongo = 'mongodb://127.0.0.1:27017/proyectoFinalInTravel';
     mongoose.Promise = global.Promise;
 
     mongoose.connection.on('error', () => {
