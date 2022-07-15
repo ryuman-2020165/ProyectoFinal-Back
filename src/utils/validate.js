@@ -102,3 +102,16 @@ exports.findUser = async (username) => {
         return err;
     }
 }
+
+
+
+exports.searchCategory = async(name)=>{
+    try{
+        const category = await Category.findOne({name: name});
+        if(!category) return false
+        return category;
+    }catch(err){
+        console.log(err);
+        return err;
+    }
+}

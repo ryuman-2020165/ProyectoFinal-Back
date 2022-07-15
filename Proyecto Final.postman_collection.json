@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "e225eeb9-5ac8-4042-94e7-b2bad9f85ec7",
+		"name": "Proyecto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ale2",
+									"type": "default"
+								},
+								{
+									"key": "username",
+									"value": "ale",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ryuman-2020165@kinal.edu.gt",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ale2",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ale2",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/user/update/62d1a6a01f4044ea18878150",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"update",
+								"62d1a6a01f4044ea18878150"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3200/user/delete/62d1a6a01f4044ea18878150",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"delete",
+								"62d1a6a01f4044ea18878150"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Usuario",
+					"item": [
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTA3MTI2LCJleHAiOjE2NTc5MTc5MjZ9.yuUfCA-0A7kgNtENmJCU71QKN930H-xvJEUwQcTX17Y",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin2",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "admin22",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "admin",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "CLIENT",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/deleteUser/62d1a6851f4044ea1887814d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"deleteUser",
+										"62d1a6851f4044ea1887814d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTA3MTI2LCJleHAiOjE2NTc5MTc5MjZ9.yuUfCA-0A7kgNtENmJCU71QKN930H-xvJEUwQcTX17Y",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin2",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "admin22",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "admin",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "CLIENT",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/updateUser/62d1a6851f4044ea1887814d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"updateUser",
+										"62d1a6851f4044ea1887814d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTA3MTI2LCJleHAiOjE2NTc5MTc5MjZ9.yuUfCA-0A7kgNtENmJCU71QKN930H-xvJEUwQcTX17Y",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "admin2",
+											"type": "default"
+										},
+										{
+											"key": "username",
+											"value": "admin22",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "admin",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "role",
+											"value": "CLIENT",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/saveUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"saveUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categoria",
+					"item": [
+						{
+							"name": "test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/category/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Guardar categoria",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Categoria 3",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "Hola",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/category/addCategory",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"addCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar categoria",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "categoria 1",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/category/updateCategory/62d1decd12d805c59b0d3b15",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"updateCategory",
+										"62d1decd12d805c59b0d3b15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar categoria",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/category/deleteCategory/62d1e37d78f16cd5413fe0f6",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"deleteCategory",
+										"62d1e37d78f16cd5413fe0f6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Categorys",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "",
+											"value": "",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/category/getCategorys",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategorys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver categoria por id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/category/getCategory/62d1e622b7ba78f6d99d838b",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategory",
+										"62d1e622b7ba78f6d99d838b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
