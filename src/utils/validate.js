@@ -3,6 +3,7 @@
 const bcrypt = require('bcrypt-nodejs');
 const User = require('../models/user.model');
 const Category = require('../models/category.model');
+const Department = require('../models/department.model');
 
 exports.validateData = (data) =>{
     let keys = Object.keys(data), msg = '';
@@ -110,6 +111,17 @@ exports.searchCategory = async(name)=>{
         const category = await Category.findOne({name: name});
         if(!category) return false
         return category;
+    }catch(err){
+        console.log(err);
+        return err;
+    }
+}
+
+exports.searchDepartment = async(name)=>{
+    try{
+        const department = await Department.findOne({name: name});
+        if(!department) return false
+        return department;
     }catch(err){
         console.log(err);
         return err;

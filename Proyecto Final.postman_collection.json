@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e225eeb9-5ac8-4042-94e7-b2bad9f85ec7",
+		"_postman_id": "d6d629eb-bf10-4b3c-85a4-13ef0a43c934",
 		"name": "Proyecto Final",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20824077"
 	},
 	"item": [
 		{
@@ -376,7 +377,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Categoria 3",
+											"value": "Categoria 1",
 											"type": "default"
 										},
 										{
@@ -399,16 +400,29 @@
 								}
 							},
 							"response": []
+						}
+					]
+				},
+				{
+					"name": "Departamento",
+					"item": [
+						{
+							"name": "test",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						},
 						{
-							"name": "Actualizar categoria",
+							"name": "Guardar Departamento",
 							"request": {
-								"method": "PUT",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -416,55 +430,114 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "categoria 1",
-											"type": "default",
-											"disabled": true
+											"value": "Guatemala",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Guatemala, Guatemala",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/category/updateCategory/62d1decd12d805c59b0d3b15",
+									"raw": "localhost:3200/department/saveDepartment",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
-										"category",
-										"updateCategory",
-										"62d1decd12d805c59b0d3b15"
+										"department",
+										"saveDepartment"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Eliminar categoria",
+							"name": "Editar Departamento",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Zacapa",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Guatemala, Guatemala",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/department/updateDepartment/62d1ed1507ffee14b723bfa6",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"department",
+										"updateDepartment",
+										"62d1ed1507ffee14b723bfa6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Departamento",
 							"request": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Zacapa",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Guatemala, Guatemala",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "localhost:3200/category/deleteCategory/62d1e37d78f16cd5413fe0f6",
+									"raw": "localhost:3200/department/deleteDepartment/62d1ed1507ffee14b723bfa6",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
-										"category",
-										"deleteCategory",
-										"62d1e37d78f16cd5413fe0f6"
+										"department",
+										"deleteDepartment",
+										"62d1ed1507ffee14b723bfa6"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "get Categorys",
+							"name": "Buscar Departamentos",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -473,55 +546,77 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
-											"key": "",
-											"value": "",
-											"type": "default"
+											"key": "name",
+											"value": "Zacapa",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Guatemala, Guatemala",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/category/getCategorys",
+									"raw": "localhost:3200/department/getDepartments",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
-										"category",
-										"getCategorys"
+										"department",
+										"getDepartments"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Ver categoria por id",
+							"name": "Buscar Departamento",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Zacapa",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Guatemala, Guatemala",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "localhost:3200/category/getCategory/62d1e622b7ba78f6d99d838b",
+									"raw": "localhost:3200/department/getDepartments",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
-										"category",
-										"getCategory",
-										"62d1e622b7ba78f6d99d838b"
+										"department",
+										"getDepartments"
 									]
 								}
 							},
