@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d6d629eb-bf10-4b3c-85a4-13ef0a43c934",
+		"_postman_id": "fc7de6fc-b728-441c-9713-21d88c67f3c7",
 		"name": "Proyecto Final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20824077"
+		"_exporter_id": "19254100"
 	},
 	"item": [
 		{
@@ -110,7 +110,7 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "esinay",
+											"value": "ADMIN",
 											"type": "default"
 										},
 										{
@@ -301,6 +301,54 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Destino",
+					"item": [
+						{
+							"name": "Buscar Destinos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinysClients",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinysClients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar destino",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinyClient/62d307b9c984c50732e15b20",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinyClient",
+										"62d307b9c984c50732e15b20"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "New Folder",
+					"item": []
 				}
 			]
 		},
@@ -450,7 +498,7 @@
 										},
 										{
 											"key": "username",
-											"value": "admin22",
+											"value": "admin",
 											"type": "default"
 										},
 										{
@@ -515,7 +563,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "default"
 									}
 								],
@@ -543,6 +591,45 @@
 									"path": [
 										"category",
 										"addCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Categorias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/category/getCategorys",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategorys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Categoria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/category/getCategory/62d23b55bcc796c89e4d7941",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategory",
+										"62d23b55bcc796c89e4d7941"
 									]
 								}
 							},
@@ -579,7 +666,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "text"
 									}
 								],
@@ -619,7 +706,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "text"
 									}
 								],
@@ -629,17 +716,18 @@
 										{
 											"key": "name",
 											"value": "Zacapa",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "description",
-											"value": "Guatemala, Guatemala",
+											"value": "Guatemala, Guatemala hh",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/department/updateDepartment/62d1ed1507ffee14b723bfa6",
+									"raw": "localhost:3200/department/updateDepartment/62d328d21af2a59da65f2012",
 									"host": [
 										"localhost"
 									],
@@ -647,7 +735,7 @@
 									"path": [
 										"department",
 										"updateDepartment",
-										"62d1ed1507ffee14b723bfa6"
+										"62d328d21af2a59da65f2012"
 									]
 								}
 							},
@@ -817,7 +905,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+												"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 												"type": "text"
 											}
 										],
@@ -826,7 +914,7 @@
 											"urlencoded": [
 												{
 													"key": "name",
-													"value": "Yuman36",
+													"value": "Yuman3",
 													"type": "text"
 												},
 												{
@@ -853,7 +941,7 @@
 											]
 										},
 										"url": {
-											"raw": "localhost:3200/lodge/addLodge/62d1f1dd28ee37bea0d6c28a/62d23b55bcc796c89e4d7941",
+											"raw": "localhost:3200/lodge/addLodge/62d328d21af2a59da65f2012/62d328f71af2a59da65f2015",
 											"host": [
 												"localhost"
 											],
@@ -861,8 +949,8 @@
 											"path": [
 												"lodge",
 												"addLodge",
-												"62d1f1dd28ee37bea0d6c28a",
-												"62d23b55bcc796c89e4d7941"
+												"62d328d21af2a59da65f2012",
+												"62d328f71af2a59da65f2015"
 											]
 										}
 									},
@@ -1047,6 +1135,42 @@
 										}
 									},
 									"response": []
+								},
+								{
+									"name": "Editar Hospedaje",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "description",
+													"value": "holass",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/updateLodge/62d3294d1af2a59da65f201b",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"updateLodge",
+												"62d3294d1af2a59da65f201b"
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						}
@@ -1062,7 +1186,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "text"
 									}
 								],
@@ -1071,7 +1195,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Puertosss",
+											"value": "Puertoss",
 											"type": "text"
 										},
 										{
@@ -1102,7 +1226,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "text"
 									}
 								],
@@ -1117,12 +1241,13 @@
 										{
 											"key": "endDate",
 											"value": "2022-10-5",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/trip/updateTrip/62d2e8cf07e4eae1a0769a60",
+									"raw": "localhost:3200/trip/updateTrip/62d33a414ef59155a68fa065",
 									"host": [
 										"localhost"
 									],
@@ -1130,7 +1255,7 @@
 									"path": [
 										"trip",
 										"updateTrip",
-										"62d2e8cf07e4eae1a0769a60"
+										"62d33a414ef59155a68fa065"
 									]
 								}
 							},
@@ -1301,7 +1426,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
 										"type": "text"
 									}
 								],
@@ -1321,7 +1446,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/destiny/addDestiny/62d30767ba277b544dd02a33/62d24f9af9f9a14d4aebfcc9",
+									"raw": "localhost:3200/destiny/addDestiny/62d33a414ef59155a68fa065/62d329551af2a59da65f2025",
 									"host": [
 										"localhost"
 									],
@@ -1329,8 +1454,8 @@
 									"path": [
 										"destiny",
 										"addDestiny",
-										"62d30767ba277b544dd02a33",
-										"62d24f9af9f9a14d4aebfcc9"
+										"62d33a414ef59155a68fa065",
+										"62d329551af2a59da65f2025"
 									]
 								}
 							},
@@ -1465,6 +1590,42 @@
 										"destiny",
 										"getDestiny",
 										"62d307b9c984c50732e15b20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar Destino",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDA1NTI0LCJleHAiOjE2NTgwMTYzMjR9.8YsCtnnZl4QlbuqJXZO7h1MDX-p-1XnXWlzhlLxYUvM\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "1998-05-20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/updateDestiny/62d33aa94ef59155a68fa070",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"updateDestiny",
+										"62d33aa94ef59155a68fa070"
 									]
 								}
 							},
