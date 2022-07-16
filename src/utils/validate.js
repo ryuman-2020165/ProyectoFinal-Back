@@ -107,8 +107,6 @@ exports.findUser = async (username) => {
     }
 }
 
-
-
 exports.searchCategory = async(name)=>{
     try{
         const category = await Category.findOne({name: name});

@@ -33,7 +33,6 @@ exports.saveCategory = async(req, res)=>{
     }
 }
 
-
 exports.updateCategory = async(req,res)=>{
     try {
         const categoryId = req.params.id;
@@ -49,9 +48,9 @@ exports.updateCategory = async(req,res)=>{
                 const updatedCategory = await Category.findOneAndUpdate({_id: categoryId}, params, {new: true})
                 if (!updatedCategory) {
                     return res.status(400).send({ message: 'No se ha podido actualizar la categoria' });
-                } else {
-                    return res.send({ message: 'Categoria actualizada', updatedCategory })
-            }
+                    } else {
+                        return res.send({ message: 'Categoria actualizada', updatedCategory })
+                }
             }
         }
     } catch (err) {
@@ -63,19 +62,19 @@ exports.updateCategory = async(req,res)=>{
 exports.deleteCategory = async(req,res)=>{
     try {
         const categoryId = req.params.id;
-  
         const categoryDeleted = await Category.findOneAndDelete({_id: categoryId});
         if (!categoryDeleted) {
             return res.status(404).send({ message: 'La categoria ya se ha eliminado o no existe' });
         } else {
             return res.send({ message: 'Categoria eliminada', categoryDeleted })   
         }
-
     } catch (err) {
         console.log(err);
         return res.status(500).send({err, message: 'Error eliminando la categoria'});
     }
 }
+
+//* Funciones de usuario registrado ---------------------------------------------------------------------------------------
 
 exports.getCategorys = async(req,res)=>{
     try {
@@ -90,7 +89,6 @@ exports.getCategorys = async(req,res)=>{
         return res.status(500).send({err, message: 'Error obteniendo la categoria'});
     }
 }
-
 
 exports.getCategoryById = async(req,res)=>{
     try {

@@ -12,7 +12,6 @@ exports.testLodge = (req, res)=>{
 
 //* Funciones de administrador ---------------------------------------------------------------------------------------
 
-
 exports.addLodge = async(req, res)=>{
     try{
 
@@ -92,14 +91,12 @@ exports.getLodge_OnlyAdmin = async (req, res) => {
     exports.deleteLodge_OnlyAdmin = async(req,res)=>{
         try {
             const lodgeId = req.params.id;
-      
             const deleteLodge = await Lodge.findOneAndDelete({_id: lodgeId});
             if (!deleteLodge) {
                 return res.status(404).send({ message: 'El hospedaje no se ha econtrado o ya fue eliminado' });
             } else {
                 return res.send({ message: 'Hospedaje eliminado', deleteLodge })   
             }
-    
         } catch (err) {
             console.log(err);
             return res.status(500).send({err, message: 'Error eliminando el hospedaje'});
@@ -107,7 +104,6 @@ exports.getLodge_OnlyAdmin = async (req, res) => {
     }
     
 //* Funciones de usuario registrado ---------------------------------------------------------------------------------------
-
 
 exports.getLodges_OnlyClient = async (req, res) => {
     try {

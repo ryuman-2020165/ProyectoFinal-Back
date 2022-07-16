@@ -10,7 +10,6 @@ exports.testDepartment = (req, res)=>{
 
 //* Funciones de administrador ---------------------------------------------------------------------------------------
 
-
 exports.saveDepartment = async(req, res)=>{
     try{
         const params = req.body;
@@ -36,7 +35,6 @@ exports.saveDepartment = async(req, res)=>{
         return res.status(500).send({err, message: 'Error guardando el departamento'});
     }
 }
-
 
 exports.updateDepartment = async(req,res)=>{
     try {

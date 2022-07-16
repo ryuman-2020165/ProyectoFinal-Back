@@ -72,7 +72,6 @@ exports.deleteTrip = async(req,res)=>{
         } else {
             return res.send({ message: 'Viaje eliminado', tripDeleted })   
         }
-
     } catch (err) {
         console.log(err);
         return res.status(500).send({err, message: 'Error eliminando el viaje'});

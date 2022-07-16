@@ -9,6 +9,8 @@ exports.test =  (req, res)=>{
     return res.send({message:'Destino funcionando correctamente'});
 }
 
+//* Funciones de administrador ---------------------------------------------------------------------------------------
+
 exports.addDestiny = async(req,res)=>{
     try{
         const params = req.body;
@@ -30,8 +32,7 @@ exports.addDestiny = async(req,res)=>{
                 }else{
                         const destiny = new Destiny(data);
                         await destiny.save();
-                        return res.send({message:'Destino creado satisfactoriamente', destiny})
-                    
+                        return res.send({message:'Destino creado satisfactoriamente', destiny})  
                 }
             }
         }else{
@@ -52,7 +53,6 @@ exports.deleteDestiny_OnlyAdmin = async(req,res)=>{
         } else {
             return res.send({ message: 'Destino eliminado', deleteDestiny })   
         }
-
     } catch (err) {
         console.log(err);
         return res.status(500).send({err, message: 'Error eliminando el destino'});
@@ -77,6 +77,37 @@ exports.getDestiny_OnlyAdmin = async (req, res) => {
     try {
         const destinyId = req.params.id;
         const destiny = await Destiny.findOne({ _id: destinyId }).populate('trip').lean();
+        if (!destiny) {
+            return res.status(400).send({ message: 'Destino no encontrado' });
+        } else {
+            return res.send({ message: 'Destino encontrado:', destiny });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo el destino' });
+    }
+}
+ 
+//* Funciones de usuario registrado ---------------------------------------------------------------------------------------
+
+exports.getDestinys_OnlyClient = async (req, res) => {
+    try {
+        const destinys = await Destiny.find()
+        if (!destinys) {
+            return res.status(400).send({ message: 'Destinos no encontrados' });
+        } else {
+            return res.send({ messsage: 'Destinos encontrados:', destinys });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo estos destinos' });
+    }
+}
+
+exports.getDestiny_OnlyClient = async (req, res) => {
+    try {
+        const destinyId = req.params.id;
+        const destiny = await Destiny.findOne({ _id: destinyId }).lean();
         if (!destiny) {
             return res.status(400).send({ message: 'Destino no encontrado' });
         } else {

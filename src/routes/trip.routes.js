@@ -12,6 +12,7 @@ api.put('/updateTrip/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], tripController.u
 api.delete('/deleteTrip/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], tripController.deleteTrip);
 api.get('/getTrips',[mdAuth.ensureAuth, mdAuth.isAdmin], tripController.getTripsOnlyAdmin); 
 api.get('/getTrip/:id',[mdAuth.ensureAuth, mdAuth.isAdmin], tripController.getTrip_OnlyAdmin); 
+
 //Funciones de Clientes
 api.get('/getTripsClient', tripController.getTripsOnlyClient); 
 api.get('/getTripClient/:id', tripController.getTrip_OnlyClient); 
