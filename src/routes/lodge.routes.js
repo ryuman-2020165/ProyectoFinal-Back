@@ -8,9 +8,11 @@ const mdAuth = require('../services/authenticated');
 //Funciones de Admin
 api.get('/test', lodgeController.testLodge);
 api.post('/addLodge/:idDepartment/:idCategory', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.addLodge);
-api.get('/getLodges', [mdAuth.ensureAuth,mdAuth.isAdmin], lodgeController.getLodges_OnlyAdmin);
+api.get('/getLodges', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.getLodges_OnlyAdmin);
 api.get('/getLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.getLodge_OnlyAdmin);
 api.delete('/deleteLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.deleteLodge_OnlyAdmin);
+api.put('/updateLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.updateLodge_OnlyAdmin);
+
 
 // Funciones de Clientes
 api.get('/getLodgesClients', lodgeController.getLodges_OnlyClient);
