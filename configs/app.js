@@ -11,6 +11,7 @@ const categoryRoutes = require('../src/routes/category.routes');
 const departmentRoutes = require('../src/routes/department.routes');
 const tripRoutes = require('../src/routes/trip.routes');
 const lodgeRoutes = require('../src/routes/lodge.routes');
+const destinyRoutes = require('../src/routes/destiny.routes');
 
 app.use(helmet()); //Seguridad de Express
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.use('/category',categoryRoutes);
 app.use('/department', departmentRoutes);
 app.use('/trip', tripRoutes);
 app.use('/lodge', lodgeRoutes);
+app.use('/destiny', destinyRoutes);
 
 
 

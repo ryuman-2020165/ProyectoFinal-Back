@@ -89,20 +89,21 @@ exports.getLodge_OnlyAdmin = async (req, res) => {
     }
 }
 
-exports.deleteLodge_OnlyAdmin = async (req, res)=>{
-    try{
-        const lodgeId = req.params.id;
-        const deleteLodge = await checkDeleteLodge(lodgeId)
-        if(!deleteLodge){
-        return res.status(400).send({message: 'No se ha encontrado el Lodge o ya fue eliminado'})
-    }else{
-        await Lodge.findOneAndDelete({_id: lodgeId});
-        return res.send({message: 'Lodge Eliminado',deleteLodge })
-    }
-    }catch (err){
-        console.log(err);
-        return res.status(500).send({message: 'Error eliminando Lodge'})
-    }
+    exports.deleteLodge_OnlyAdmin = async(req,res)=>{
+        try {
+            const lodgeId = req.params.id;
+      
+            const deleteLodge = await Lodge.findOneAndDelete({_id: lodgeId});
+            if (!deleteLodge) {
+                return res.status(404).send({ message: 'El hospedaje no se ha econtrado o ya fue eliminado' });
+            } else {
+                return res.send({ message: 'Hospedaje eliminado', deleteLodge })   
+            }
+    
+        } catch (err) {
+            console.log(err);
+            return res.status(500).send({err, message: 'Error eliminando el hospedaje'});
+        }
     }
     
 //* Funciones de usuario registrado ---------------------------------------------------------------------------------------

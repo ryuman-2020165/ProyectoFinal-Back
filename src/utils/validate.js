@@ -6,6 +6,7 @@ const Category = require('../models/category.model');
 const Department = require('../models/department.model'); 
 const Trip = require('../models/trip.model');
 const Lodge = require('../models/lodge.model');
+const Destiny = require('../models/destiny.model');
 
 exports.validateData = (data) =>{
     let keys = Object.keys(data), msg = '';
@@ -152,12 +153,13 @@ exports.searchLodge = async(name)=>{
     }
 }
 
-exports.checkDeleteLodge = async (_id) => {
-    try {
-        let exist = await Lodge.findOne({ _id }).lean()
-        return exist;
-    } catch (err) {
-        console.log(err)
+exports.searchDestiny = async(name)=>{
+    try{
+        const destiny = await Destiny.findOne({name: name});
+        if(!destiny) return false
+        return destiny;
+    }catch(err){
+        console.log(err);
         return err;
     }
 }

@@ -994,7 +994,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
 												"type": "text"
 											}
 										],
@@ -1034,7 +1034,7 @@
 											]
 										},
 										"url": {
-											"raw": "localhost:3200/lodge/deleteLodge/62d25712f66a55e724a1cb7a",
+											"raw": "localhost:3200/lodge/deleteLodge/62d24f0055bce4b457ca319b",
 											"host": [
 												"localhost"
 											],
@@ -1042,7 +1042,7 @@
 											"path": [
 												"lodge",
 												"deleteLodge",
-												"62d25712f66a55e724a1cb7a"
+												"62d24f0055bce4b457ca319b"
 											]
 										}
 									},
@@ -1071,7 +1071,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Puertoss",
+											"value": "Puertosss",
 											"type": "text"
 										},
 										{
@@ -1265,6 +1265,206 @@
 										"trip",
 										"getTrip",
 										"62d2ec150b21ad4e9c44803d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Destino",
+					"item": [
+						{
+							"name": "test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Guardar Destino",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text"
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/addDestiny/62d30767ba277b544dd02a33/62d24f9af9f9a14d4aebfcc9",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"addDestiny",
+										"62d30767ba277b544dd02a33",
+										"62d24f9af9f9a14d4aebfcc9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar destino",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/deleteDestiny/62d30311b657f3fbcbc6da43",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"deleteDestiny",
+										"62d30311b657f3fbcbc6da43"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar desstinos",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinys",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar desstinos Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/getDestiny/62d307b9c984c50732e15b20",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestiny",
+										"62d307b9c984c50732e15b20"
 									]
 								}
 							},
