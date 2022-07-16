@@ -77,7 +77,7 @@ exports.getLodges_OnlyAdmin = async (req, res) => {
 exports.getLodge_OnlyAdmin = async (req, res) => {
     try {
         const lodgeId = req.params.id;
-        const lodge = await Lodge.findOne({ _id: lodgeId }).lean();
+        const lodge = await Lodge.findOne({ _id: lodgeId }).populate('user').lean();
         if (!lodge) {
             return res.status(400).send({ message: 'Hospedaje no encontrado' });
         } else {
@@ -104,20 +104,11 @@ exports.deleteLodge_OnlyAdmin = async (req, res)=>{
         return res.status(500).send({message: 'Error eliminando Lodge'})
     }
     }
-    exports.checkDeleteLodge = async (_id) => {
-        try {
-            let exist = await Lodge.findOne({ _id }).lean()
-            return exist;
-        } catch (err) {
-            console.log(err)
-            return err;
-        }
-    }
-
+    
 //* Funciones de usuario registrado ---------------------------------------------------------------------------------------
 
 
-exports.getLodges_OnlyClients = async (req, res) => {
+exports.getLodges_OnlyClient = async (req, res) => {
     try {
         const lodges = await Lodge.find()
         if (!lodges) {

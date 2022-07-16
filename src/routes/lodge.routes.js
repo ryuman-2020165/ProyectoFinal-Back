@@ -12,7 +12,7 @@ api.get('/getLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.ge
 api.delete('/deleteLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController.deleteLodge_OnlyAdmin);
 // Funciones de Clientes
 
-api.get('/getLodgesClients', lodgeController.getLodges_OnlyClients);
-api.get('/getLodgeClient/:id', lodgeController.getLodge_OnlyAdmin);
+api.get('/getLodgesClients', lodgeController.getLodges_OnlyClient);
+api.get('/getLodgeClient/:id', lodgeController.getLodge_OnlyClient);
 
 module.exports = api;

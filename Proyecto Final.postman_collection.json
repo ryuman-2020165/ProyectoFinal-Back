@@ -7,153 +7,300 @@
 	},
 	"item": [
 		{
-			"name": "Usuario",
+			"name": "User",
 			"item": [
 				{
-					"name": "Registrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "ale2",
-									"type": "default"
-								},
-								{
-									"key": "username",
-									"value": "ale",
-									"type": "default"
-								},
-								{
-									"key": "email",
-									"value": "ryuman-2020165@kinal.edu.gt",
-									"type": "default"
-								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default"
+					"name": "Hospedaje Cliente",
+					"item": [
+						{
+							"name": "Buscar hospedajes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/lodge/getLodgesClients",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"lodge",
+										"getLodgesClients"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"register"
-							]
+						{
+							"name": "Buscar hospedaje",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/lodge/getLodgeClient/62d24f9af9f9a14d4aebfcc9",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"lodge",
+										"getLodgeClient",
+										"62d24f9af9f9a14d4aebfcc9"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "ale2",
-									"type": "default"
+					"name": "Usuario",
+					"item": [
+						{
+							"name": "Registrar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "ale2",
+											"type": "default"
+										},
+										{
+											"key": "username",
+											"value": "esinay",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "ryuman-2020165@kinal.edu.gt",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default"
+								"url": {
+									"raw": "localhost:3200/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"register"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"login"
-							]
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "esinay",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "ale2",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/update/62d1a6a01f4044ea18878150",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"update",
+										"62d1a6a01f4044ea18878150"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/user/delete/62d1a6a01f4044ea18878150",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"delete",
+										"62d1a6a01f4044ea18878150"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Actualizar",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "ale2",
-									"type": "default"
+					"name": "Viaje(trip)",
+					"item": [
+						{
+							"name": "Buscar Viajes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default",
-									"disabled": true
+								"url": {
+									"raw": "localhost:3200/trip/getTripsClient",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTripsClient"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/update/62d1a6a01f4044ea18878150",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"update",
-								"62d1a6a01f4044ea18878150"
-							]
+						{
+							"name": "Buscar Viaje",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTripClient/62d2ec150b21ad4e9c44803d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTripClient",
+										"62d2ec150b21ad4e9c44803d"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "localhost:3200/user/delete/62d1a6a01f4044ea18878150",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"delete",
-								"62d1a6a01f4044ea18878150"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
@@ -368,7 +515,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
 										"type": "default"
 									}
 								],
@@ -410,7 +557,18 @@
 							"name": "test",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/department/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"department",
+										"test"
+									]
+								}
 							},
 							"response": []
 						},
@@ -430,7 +588,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Guatemala",
+											"value": "Zacapa",
 											"type": "text"
 										},
 										{
@@ -599,24 +757,514 @@
 										{
 											"key": "name",
 											"value": "Zacapa",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "description",
 											"value": "Guatemala, Guatemala",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/department/getDepartments",
+									"raw": "localhost:3200/department/getDepartment/62d1f1dd28ee37bea0d6c28a",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
 										"department",
-										"getDepartments"
+										"getDepartment",
+										"62d1f1dd28ee37bea0d6c28a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lodge",
+					"item": [
+						{
+							"name": "Hospedaje Administrador",
+							"item": [
+								{
+									"name": "test",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3200/lodge/test",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"test"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Agregar Hospedaje",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Yuman36",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/addLodge/62d1f1dd28ee37bea0d6c28a/62d23b55bcc796c89e4d7941",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"addLodge",
+												"62d1f1dd28ee37bea0d6c28a",
+												"62d23b55bcc796c89e4d7941"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar Hospedajes",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/getLodges",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"getLodges"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar Hospedaje",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/getLodge/62d24f9af9f9a14d4aebfcc9",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"getLodge",
+												"62d24f9af9f9a14d4aebfcc9"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Eliminar Hospedaje",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/deleteLodge/62d25712f66a55e724a1cb7a",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"deleteLodge",
+												"62d25712f66a55e724a1cb7a"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Viaje(trip)",
+					"item": [
+						{
+							"name": "Agregar Viaje",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puertoss",
+											"type": "text"
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/addTrip",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"addTrip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Viaje",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text"
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/updateTrip/62d2e8cf07e4eae1a0769a60",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"updateTrip",
+										"62d2e8cf07e4eae1a0769a60"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Viaje",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/deleteTrip/62d2eb21b77ca3692d6fefa5",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"deleteTrip",
+										"62d2eb21b77ca3692d6fefa5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Viajes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTrips",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTrips"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Viaje",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTrip/62d2ec150b21ad4e9c44803d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTrip",
+										"62d2ec150b21ad4e9c44803d"
 									]
 								}
 							},

@@ -8,16 +8,6 @@ exports.prueba = async (req, res)=>{
     await res.send({message: 'Controlador de trip corriendo'})
 }
 
-exports.addTrip = async (req,res)=>{
-    try{
-
-    }catch(err){
-        console.log(err);
-        return res.status(500).send({err, message: 'error registrando usuario'});
-    }
-}
-
-
 exports.addTrip = async(req, res)=>{
     try{
 
@@ -46,57 +36,104 @@ exports.addTrip = async(req, res)=>{
     }
 }
 
-
-exports.getTrip = async(req, res)=>{  
-    try {
-        const tripId = req.params.id; 
-        const trip = await Trip.findOne({_id: tripId}); 
-        if (!trip) {
-            return res.send({message: 'trip not found'}); 
-        } else {
-            return res.send({trip}); 
-        }
-    } catch (error) {
-        console.log(error) 
-        return error;
-    }
-    
-} 
-
-
-exports.updateTrip = async(req, res)=>{ 
-    try {
-        const params = req.body; 
-        const tripId = req.params.id; 
-        const check = await checkUpdate(params); 
-        if (check === false) {
-            return res.status(400).send({message: 'Data not received'}); 
-        } else {
-            const updateTrip = await Trip.findOneAndUpdate({_id: tripId}, params, {new: true}); 
-            if (!updateTrip) {
-                return res.send({message: 'Trip not found'});
-            } else {
-                return res.send({message: 'Update succesfully', updateTrip});  
+exports.updateTrip = async(req, res)=>{
+    try{
+        const tripId = req.params.id;
+        const params = req.body;
+        const checkExist = await Trip.findOne({_id: tripId}).lean();
+        if(!checkExist){
+            return res.status(400).send({message:'No se ha encontrado este viaje'});
+        }else{
+            const tripExist = await searchTrip(params.name);
+            if(tripExist){
+                return res.send({message: 'ya existe un viaje con este nombre'});
+            }else{
+                const updatedTrip = await Trip.findOneAndUpdate({_id: tripId}, params, {new:true});
+                if(!updatedTrip){
+                    return res.status(400).send({message: 'No se ha podido actualizar el viaje'});
+                }else{
+                    return res.send({message: 'Viaje actualizado', updatedTrip});
+                }
             }
         }
-    } catch (error) {
-        console.log(error) 
-        return error;
+    }catch(err){
+        console.log.err;
+        return res.status(500).send({err, message:'Error actualizando viajes'});
     }
-} 
+}
 
-
-exports.deleteTrip = async (req, res)=>{ 
+exports.deleteTrip = async(req,res)=>{
     try {
-        const tripId = req.params.id; 
-        const tripDelete = await Trip.findOneAndDelete({_id: tripId}); 
-        if (!tripDelete) {
-            return res.status(500).send({message: 'Trip not found or already delete'});
+        const tripId = req.params.id;
+  
+        const tripDeleted = await Trip.findOneAndDelete({_id: tripId});
+        if (!tripDeleted) {
+            return res.status(404).send({ message: 'El viaje ya se ha eliminado o no existe' });
         } else {
-            return res.send({tripDelete, message: 'Trip delete succesfully'});
+            return res.send({ message: 'Viaje eliminado', tripDeleted })   
         }
-    } catch (error) {
-        console.log(error) 
-        return error;
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({err, message: 'Error eliminando el viaje'});
+    }
+}
+
+exports.getTripsOnlyAdmin = async(req,res)=>{
+    try {
+        const findTrips = await Trip.find().populate('user').lean();
+        if (findTrips.length == 0) {
+            return res.status(400).send({ message: 'No se han encontrado los viajes'});
+        } else {
+            return res.send({ message: 'Viajes encontradas:', findTrips })   
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({err, message: 'Error obteniendo los viajes'});
+    }
+}
+
+exports.getTrip_OnlyAdmin = async (req, res) => {
+    try {
+        const tripId = req.params.id;
+        const trip = await Trip.findOne({ _id: tripId }).populate('user').lean();
+        if (!trip) {
+            return res.status(400).send({ message: 'Viaje no encontrado' });
+        } else {
+            return res.send({ message: 'Viaje encontrado encontrado:', trip });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo el viaje' });
+    }
+}
+
+// Funciones de Administrador
+exports.getTripsOnlyClient = async(req,res)=>{
+    try {
+        const findTrips = await Trip.find({}).lean();
+        if (findTrips.length == 0) {
+            return res.status(400).send({ message: 'No se han encontrado los viajes'});
+        } else {
+            return res.send({ message: 'Viajes encontradas:', findTrips })   
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({err, message: 'Error obteniendo los viajes'});
+    }
+}
+
+exports.getTrip_OnlyClient = async (req, res) => {
+    try {
+        const tripId = req.params.id;
+        const trip = await Trip.findOne({ _id: tripId }).lean();
+        if (!trip) {
+            return res.status(400).send({ message: 'Viaje no encontrado' });
+        } else {
+            return res.send({ message: 'Viaje encontrado encontrado:', trip });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo el viaje' });
     }
 }
