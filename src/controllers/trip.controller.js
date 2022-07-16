@@ -1,7 +1,7 @@
 'use strict'
 
 const Trip = require('../models/trip.model');
-const {validateData, searchTrip} = require('../utils/validate');
+const {validateData, searchTrip, checkUpdate} = require('../utils/validate');
 const jwt = require('../services/jwt');
 
 exports.prueba = async (req, res)=>{
@@ -43,5 +43,60 @@ exports.addTrip = async(req, res)=>{
     }catch(err){
         console.log(err);
         return res.status(500).send({err, message: 'Error creando el viaje'});
+    }
+}
+
+
+exports.getTrip = async(req, res)=>{  
+    try {
+        const tripId = req.params.id; 
+        const trip = await Trip.findOne({_id: tripId}); 
+        if (!trip) {
+            return res.send({message: 'trip not found'}); 
+        } else {
+            return res.send({trip}); 
+        }
+    } catch (error) {
+        console.log(error) 
+        return error;
+    }
+    
+} 
+
+
+exports.updateTrip = async(req, res)=>{ 
+    try {
+        const params = req.body; 
+        const tripId = req.params.id; 
+        const check = await checkUpdate(params); 
+        if (check === false) {
+            return res.status(400).send({message: 'Data not received'}); 
+        } else {
+            const updateTrip = await Trip.findOneAndUpdate({_id: tripId}, params, {new: true}); 
+            if (!updateTrip) {
+                return res.send({message: 'Trip not found'});
+            } else {
+                return res.send({message: 'Update succesfully', updateTrip});  
+            }
+        }
+    } catch (error) {
+        console.log(error) 
+        return error;
+    }
+} 
+
+
+exports.deleteTrip = async (req, res)=>{ 
+    try {
+        const tripId = req.params.id; 
+        const tripDelete = await Trip.findOneAndDelete({_id: tripId}); 
+        if (!tripDelete) {
+            return res.status(500).send({message: 'Trip not found or already delete'});
+        } else {
+            return res.send({tripDelete, message: 'Trip delete succesfully'});
+        }
+    } catch (error) {
+        console.log(error) 
+        return error;
     }
 }

@@ -3,7 +3,8 @@
 const bcrypt = require('bcrypt-nodejs');
 const User = require('../models/user.model');
 const Category = require('../models/category.model');
-const Department = require('../models/department.model');
+const Department = require('../models/department.model'); 
+const Trip = require('../models/trip.model');
 
 exports.validateData = (data) =>{
     let keys = Object.keys(data), msg = '';
