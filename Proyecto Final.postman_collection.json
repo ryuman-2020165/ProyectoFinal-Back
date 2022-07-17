@@ -1,229 +1,460 @@
 {
 	"info": {
-		"_postman_id": "8b622e04-9b84-45c4-b124-7256349e8e9b",
+		"_postman_id": "654ad92e-1fcc-4364-9a27-81c3d95ff9be",
 		"name": "Proyecto Final",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20824077"
 	},
 	"item": [
 		{
-			"name": "Usuario",
+			"name": "User",
 			"item": [
 				{
-					"name": "Registrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "ale2",
-									"type": "default"
-								},
-								{
-									"key": "username",
-									"value": "ale",
-									"type": "default"
-								},
-								{
-									"key": "email",
-									"value": "ryuman-2020165@kinal.edu.gt",
-									"type": "default"
-								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default"
+					"name": "Hospedaje Cliente",
+					"item": [
+						{
+							"name": "Buscar hospedajes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/lodge/getLodgesClients",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"lodge",
+										"getLodgesClients"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/register",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"register"
-							]
+						{
+							"name": "Buscar hospedaje",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/lodge/getLodgeClient/62d24f9af9f9a14d4aebfcc9",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"lodge",
+										"getLodgeClient",
+										"62d24f9af9f9a14d4aebfcc9"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "ale2",
-									"type": "default"
+					"name": "Usuario",
+					"item": [
+						{
+							"name": "Registrar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0ODIwYTU0Y2FmZWNmMzdiNjhhMDkiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTgwOTQwOTUsImV4cCI6MTY1ODEwNDg5NX0.K6u3Q1kymKw7_8wN-4K4p7vng7-9ESttRKG1WEPNGt4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "ale2",
+											"type": "default"
+										},
+										{
+											"key": "username",
+											"value": "esinay1",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "ryuman-2020165@kinal.edu.gt",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default"
+								"url": {
+									"raw": "localhost:3200/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"register"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Actualizar",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "ale2",
-									"type": "default"
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "esinay1",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
 								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "default",
-									"disabled": true
+								"url": {
+									"raw": "localhost:3200/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"login"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3200/user/update/62d1a6a01f4044ea18878150",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"update",
-								"62d1a6a01f4044ea18878150"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "localhost:3200/user/delete/62d1a6a01f4044ea18878150",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"delete",
-								"62d1a6a01f4044ea18878150"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "subir imagen",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0NmM4MzQxMmJlNmE1NDg4NzMzMDAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYXBhbG1hMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTgwODg1ODQsImV4cCI6MTY1ODA5OTM4NH0.vXyoVZt-6BTYcLYWYzd9UXBhHrjvROhNvE4yjQWWtJc\"",
-								"type": "default"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "image",
-									"type": "file",
-									"src": "/C:/Users/Abdi Palma/Downloads/promesas.png"
+						{
+							"name": "Agregar Imagen",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/jmedi/Downloads/CV.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/uploadImage",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"uploadImage"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:3200/user/uploadImage",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"uploadImage"
-							]
+						{
+							"name": "Buscar Imagen",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/getImage/Bb4W59y8941DdbHjjpokcHQU.jpeg",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"getImage",
+										"Bb4W59y8941DdbHjjpokcHQU.jpeg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "ale2",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/update/62d1a6a01f4044ea18878150",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"update",
+										"62d1a6a01f4044ea18878150"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTZhMDFmNDA0NGVhMTg4NzgxNTAiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYWxlMiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTc5MDY5NDMsImV4cCI6MTY1NzkxNzc0M30.B6njcR8cJqwgG1o8AbnAp_gwlPGo7-SnZBVWdY2v9Us",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/user/delete/62d1a6a01f4044ea18878150",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"delete",
+										"62d1a6a01f4044ea18878150"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "getImage",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0NjkzODIwOWY3OWY1MjQ1ZGYxZGMiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiYXBhbG1hIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTY1ODA4ODQ5MSwiZXhwIjoxNjU4MDk5MjkxfQ.SV6GJrNf7sObsJ4nQBIAkrGSmOXwp7uBh5MwsC7O24w\"",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3200/user/getImage/p3W3YMZ-B8nVsOWVyzwLwTMM.png",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3200",
-							"path": [
-								"user",
-								"getImage",
-								"p3W3YMZ-B8nVsOWVyzwLwTMM.png"
-							]
+					"name": "Viaje(trip)",
+					"item": [
+						{
+							"name": "Buscar Viajes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTripsClient",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTripsClient"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Viaje",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTripClient/62d2ec150b21ad4e9c44803d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTripClient",
+										"62d2ec150b21ad4e9c44803d"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "Destino",
+					"item": [
+						{
+							"name": "Buscar Destinos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinysClients",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinysClients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar destino",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinyClient/62d307b9c984c50732e15b20",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinyClient",
+										"62d307b9c984c50732e15b20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mi destino",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0ODIwYTU0Y2FmZWNmMzdiNjhhMDkiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTgwOTQwOTUsImV4cCI6MTY1ODEwNDg5NX0.K6u3Q1kymKw7_8wN-4K4p7vng7-9ESttRKG1WEPNGt4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/destiny/myDestiny",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"myDestiny"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "New Folder",
+					"item": []
 				}
 			]
 		},
@@ -438,7 +669,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxYTVjODFmNDA0NGVhMTg4NzgxNGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTIxMjIyLCJleHAiOjE2NTc5MzIwMjJ9.vvg5rhHqIC23IDOLpmP51ha0h2vsFcF7RaRWA64Xmec",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
 										"type": "default"
 									}
 								],
@@ -470,6 +701,45 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Buscar Categorias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/category/getCategorys",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategorys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Categoria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/category/getCategory/62d23b55bcc796c89e4d7941",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"category",
+										"getCategory",
+										"62d23b55bcc796c89e4d7941"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -482,7 +752,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": ""
+									"raw": "localhost:3200/department/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"department",
+										"test"
+									]
 								}
 							},
 							"response": []
@@ -503,7 +781,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Guatemala",
+											"value": "Zacapa",
 											"type": "text"
 										},
 										{
@@ -672,24 +950,27 @@
 										{
 											"key": "name",
 											"value": "Zacapa",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "description",
 											"value": "Guatemala, Guatemala",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/department/getDepartments",
+									"raw": "localhost:3200/department/getDepartment/62d1f1dd28ee37bea0d6c28a",
 									"host": [
 										"localhost"
 									],
 									"port": "3200",
 									"path": [
 										"department",
-										"getDepartments"
+										"getDepartment",
+										"62d1f1dd28ee37bea0d6c28a"
 									]
 								}
 							},
@@ -698,43 +979,360 @@
 					]
 				},
 				{
-					"name": "Trip",
+					"name": "Lodge",
 					"item": [
 						{
-							"name": "test",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": []
+							"name": "Hospedaje Administrador",
+							"item": [
+								{
+									"name": "test",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3200/lodge/test",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"test"
+											]
+										}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "localhost:3200/trip/testTrip",
-									"host": [
-										"localhost"
-									],
-									"port": "3200",
-									"path": [
-										"trip",
-										"testTrip"
-									]
+								{
+									"name": "Agregar Hospedaje",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTQ0OTA1LCJleHAiOjE2NTc5NTU3MDV9.klV3wCDlgkaygXoMNVu0ujkUTbRjZjKVfW1G9JohNOA",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Yuman36",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/addLodge/62d1f1dd28ee37bea0d6c28a/62d23b55bcc796c89e4d7941",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"addLodge",
+												"62d1f1dd28ee37bea0d6c28a",
+												"62d23b55bcc796c89e4d7941"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar Hospedajes",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/getLodges",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"getLodges"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar Hospedaje",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text"
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/getLodge/62d24f9af9f9a14d4aebfcc9",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"getLodge",
+												"62d24f9af9f9a14d4aebfcc9"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Agregar Imagen",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/C:/Users/jmedi/Downloads/1111111111111111.jpeg"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/uploadImageLodge/62d24f9af9f9a14d4aebfcc9",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"uploadImageLodge",
+												"62d24f9af9f9a14d4aebfcc9"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar Imagen",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "image",
+													"type": "file",
+													"src": [],
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/getImageLodge/rYL_m7AkjuPX8cOFCKc06Esu.jpeg",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"getImageLodge",
+												"rYL_m7AkjuPX8cOFCKc06Esu.jpeg"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Eliminar Hospedaje",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Jefri6",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "description",
+													"value": "Jefri2",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "price",
+													"value": "400",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "popularity",
+													"value": "3",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "image",
+													"value": "no",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/lodge/deleteLodge/62d24f0055bce4b457ca319b",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"lodge",
+												"deleteLodge",
+												"62d24f0055bce4b457ca319b"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
-						},
+							]
+						}
+					]
+				},
+				{
+					"name": "Viaje(trip)",
+					"item": [
 						{
-							"name": "addTrip",
+							"name": "Agregar Viaje",
 							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZmEzMzJmMmE5NjRlMzQ3NDIyMzIiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI4NTYyLCJleHAiOjE2NTc5MzkzNjJ9.Vw9GIxkdyUMAXBncfpZbRxNFG4rjZIyo-JnFrVJKj4k\"",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -742,19 +1340,13 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "viaje2",
-											"type": "default"
+											"value": "Puertosss",
+											"type": "text"
 										},
 										{
 											"key": "endDate",
-											"value": "2022-06-02T06:00:00.000Z",
-											"type": "default"
-										},
-										{
-											"key": "user",
-											"value": "62d1fa332f2a964e34742232",
-											"type": "default",
-											"disabled": true
+											"value": "2022-10-10",
+											"type": "text"
 										}
 									]
 								},
@@ -773,40 +1365,14 @@
 							"response": []
 						},
 						{
-							"name": "getTrip",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZmEzMzJmMmE5NjRlMzQ3NDIyMzIiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI4NTYyLCJleHAiOjE2NTc5MzkzNjJ9.Vw9GIxkdyUMAXBncfpZbRxNFG4rjZIyo-JnFrVJKj4k\"",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "localhost:3200/trip/getTrip/62d1ff8d745404a1f728b74c",
-									"host": [
-										"localhost"
-									],
-									"port": "3200",
-									"path": [
-										"trip",
-										"getTrip",
-										"62d1ff8d745404a1f728b74c"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "updateTrip",
+							"name": "Actualizar Viaje",
 							"request": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZmEzMzJmMmE5NjRlMzQ3NDIyMzIiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI4NTYyLCJleHAiOjE2NTc5MzkzNjJ9.Vw9GIxkdyUMAXBncfpZbRxNFG4rjZIyo-JnFrVJKj4k\"",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -814,18 +1380,18 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "viaje a siria",
-											"type": "default"
+											"value": "Puerto San jose2",
+											"type": "text"
 										},
 										{
 											"key": "endDate",
-											"value": "2023-06-02T06:00:00.000Z",
-											"type": "default"
+											"value": "2022-10-5",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/trip/updateTrip/62d1ff8d745404a1f728b74c",
+									"raw": "localhost:3200/trip/updateTrip/62d2e8cf07e4eae1a0769a60",
 									"host": [
 										"localhost"
 									],
@@ -833,25 +1399,42 @@
 									"path": [
 										"trip",
 										"updateTrip",
-										"62d1ff8d745404a1f728b74c"
+										"62d2e8cf07e4eae1a0769a60"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "deleteTrip",
+							"name": "Eliminar Viaje",
 							"request": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZmEzMzJmMmE5NjRlMzQ3NDIyMzIiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI4NTYyLCJleHAiOjE2NTc5MzkzNjJ9.Vw9GIxkdyUMAXBncfpZbRxNFG4rjZIyo-JnFrVJKj4k\"",
-										"type": "default"
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
 								"url": {
-									"raw": "localhost:3200/trip/deleteTrip/62d1ff8d745404a1f728b74c",
+									"raw": "localhost:3200/trip/deleteTrip/62d2eb21b77ca3692d6fefa5",
 									"host": [
 										"localhost"
 									],
@@ -859,7 +1442,304 @@
 									"path": [
 										"trip",
 										"deleteTrip",
-										"62d1ff8d745404a1f728b74c"
+										"62d2eb21b77ca3692d6fefa5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Viajes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTrips",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTrips"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Viaje",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Puerto San jose2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/trip/getTrip/62d2ec150b21ad4e9c44803d",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"trip",
+										"getTrip",
+										"62d2ec150b21ad4e9c44803d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Destino",
+					"item": [
+						{
+							"name": "test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/destiny/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Guardar Destino",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0ODIwYTU0Y2FmZWNmMzdiNjhhMDkiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTgwOTQwOTUsImV4cCI6MTY1ODEwNDg5NX0.K6u3Q1kymKw7_8wN-4K4p7vng7-9ESttRKG1WEPNGt4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-7",
+											"type": "text"
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-10",
+											"type": "text"
+										},
+										{
+											"key": "user",
+											"value": "62d4820a54cafecf37b68a09",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/addDestiny/62d30767ba277b544dd02a33/62d24f9af9f9a14d4aebfcc9",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"addDestiny",
+										"62d30767ba277b544dd02a33",
+										"62d24f9af9f9a14d4aebfcc9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar destino",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/deleteDestiny/62d30311b657f3fbcbc6da43",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"deleteDestiny",
+										"62d30311b657f3fbcbc6da43"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar desstinos",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/getDestinys",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestinys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar desstinos Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "startDate",
+											"value": "2022-7-9",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "2022-10-11",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/destiny/getDestiny/62d307b9c984c50732e15b20",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"getDestiny",
+										"62d307b9c984c50732e15b20"
 									]
 								}
 							},

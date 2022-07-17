@@ -4,7 +4,9 @@ const Lodge = require('../models/lodge.model');
 const User = require('../models/user.model');
 const Department = require('../models/department.model');
 const Category = require('../models/category.model');
-const { validateData, searchLodge, checkDeleteLodge, checkUpdate } = require('../utils/validate');
+const { validateData, searchLodge, checkDeleteLodge, checkUpdate, validateExtension } = require('../utils/validate');
+const fs = require('fs');
+const path = require('path');
 
 exports.testLodge = (req, res) => {
     return res.send({ message: 'Mensaje de Lodge funcionando correctamente' });
@@ -161,3 +163,74 @@ exports.getLodge_OnlyClient = async (req, res) => {
         return res.status(500).send({ message: 'Error obteniendo el hospedaje' });
     }
 }
+
+
+// ---------------------------------Agregar imagen--------------------------------------------
+
+
+exports.uploadImageLodge = async (req, res) => {
+    try {
+        const lodgeId = req.params.id;
+        const userId = req.user.sub;
+
+        const checkAdminLodge = await Lodge.findOne({ _id: lodgeId })
+        if (checkAdminLodge.user != userId) {
+            return res.status(400).send({ message: 'No puedes subir una imagen a este hospedaje' })
+        } else {
+            const alreadyImage = await Lodge.findOne({ _id: lodgeId });
+            let pathFile = './uploads/lodges/';
+
+            if (alreadyImage.image) {
+                fs.unlinkSync(pathFile + alreadyImage.image);
+            }
+
+            if (!req.files.image || !req.files.image.type) {
+                return res.status(400).send({ message: 'No se ha enviado una imagen' });
+            } else {
+                //ruta en la que llega la imagen
+                const filePath = req.files.image.path; // \uploads\users\file_name.ext
+
+                //separar en jerarquía la ruta de la imágen (linux o MAC: ('\'))
+                const fileSplit = filePath.split('\\');// fileSplit = ['uploads', 'users', 'file_name.ext']
+                const fileName = fileSplit[2];// fileName = file_name.ext
+
+                const extension = fileName.split('\.'); // extension = ['file_name', 'ext']
+                const fileExt = extension[1]; // fileExt = ext;
+
+                const validExt = await validateExtension(fileExt, filePath);
+
+                if (validExt === false) {
+                    return res.status(400).send({ message: 'Extensión inválida' });
+                } else {
+                    const updateLodge = await Lodge.findOneAndUpdate({ _id: lodgeId }, { image: fileName }, { new: true });
+                    if (!updateLodge) {
+                        return res.status(404).send({ message: 'Hospedaje no encontrado' });
+                    } else {
+                        return res.status(200).send({ message: 'Imagen añadida', updateLodge });
+                    }
+                }
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error subiendo imagen' });
+    }
+}
+
+exports.getImageLodge = async (req, res) => {
+    try {
+        const fileName = req.params.fileName;
+        const pathFile = './uploads/lodges/' + fileName;
+
+        const image = fs.existsSync(pathFile);
+        if (!image) {
+            return res.status(404).send({ message: 'Imagen no encontrada' });
+        } else {
+            return res.sendFile(path.resolve(pathFile));
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo la imagen' });
+    }
+}
+
