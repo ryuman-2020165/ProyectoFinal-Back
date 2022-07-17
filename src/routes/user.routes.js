@@ -3,7 +3,10 @@
 const express = require('express');
 const userController = require('../controllers/user.controller');
 const api = express.Router();
-const mdAuth = require('../services/authenticated');
+const mdAuth = require('../services/authenticated'); 
+
+const connectMultiparty = require('connect-multiparty');
+const upload = connectMultiparty({ uploadDir: './uploads/users' });
 
 //FUNCIÓN PÚBLICA
 api.get('/pruebaUser', userController.prueba);
@@ -18,6 +21,14 @@ api.delete('/delete/:id', mdAuth.ensureAuth, userController.delete);
 //ADMIN
 api.post('/saveUser', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.saveUser);
 api.put('/updateUser/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.updateUser);
-api.delete('/deleteUser/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.deleteUser);
+api.delete('/deleteUser/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.deleteUser); 
+
+
+//IMAGENES 
+//* Usuarios registrados
+api.post('/uploadImage', [mdAuth.ensureAuth, upload], userController.uploadImage);
+
+api.get('/getImage/:fileName', upload, userController.getImageUser);
+
 
 module.exports = api;

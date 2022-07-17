@@ -1,8 +1,11 @@
 'use strict'
 
 const User = require('../models/user.model');
-const {validateData, encrypt, alreadyUser, checkPassword, checkUpdate, checkPermission,checkUpdateAdmin} = require('../utils/validate');
-const jwt = require('../services/jwt');
+const {validateData, encrypt, alreadyUser, checkPassword, checkUpdate, checkPermission,checkUpdateAdmin, validateExtension} = require('../utils/validate');
+const jwt = require('../services/jwt'); 
+
+const fs = require('fs');
+const path = require('path');
 
 exports.prueba = async (req, res)=>{
     await res.send({message: 'Controller run'})
@@ -168,5 +171,68 @@ exports.deleteUser = async(req, res)=>{
     }catch(err){
         console.log(err);
         return res.status(500).send({err, message: 'error eliminando cuenta'});
+    }
+} 
+
+
+
+//-------------------------------------IMAGENES------------------------------------------ 
+
+exports.uploadImage = async (req, res) => {
+    try {
+        const alreadyImage = await User.findOne({ _id: req.user.sub });
+        let pathFile = './uploads/users/';
+
+        if (alreadyImage.image) {
+            fs.unlinkSync(pathFile + alreadyImage.image);
+        }
+
+        if (!req.files.image || !req.files.image.type) {
+            return res.status(400).send({ message: 'No se ha enviado una imagen' });
+        } else {
+            //ruta en la que llega la imagen
+            const filePath = req.files.image.path; // \uploads\users\file_name.ext
+
+            //separar en jerarquía la ruta de la imágen (linux o MAC: ('\'))
+            const fileSplit = filePath.split('\\');// fileSplit = ['uploads', 'users', 'file_name.ext']
+            const fileName = fileSplit[2];// fileName = file_name.ext
+
+            const extension = fileName.split('\.'); // extension = ['file_name', 'ext']
+            const fileExt = extension[1]; // fileExt = ext;
+
+            const validExt = await validateExtension(fileExt, filePath);
+
+            if (validExt === false) {
+                return res.status(400).send({ message: 'Extensión inválida' });
+            } else {
+                const updateUser = await User.findOneAndUpdate({ _id: req.user.sub }, { image: fileName }, { new: true });
+                if (!updateUser) {
+                    return res.status(404).send({ message: 'Usuario no encontrado' });
+                } else {
+                    delete updateUser.password;
+                    return res.status(200).send({ message: 'Imagen añadida', updateUser });
+                }
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error subiendo imagen' });
+    }
+}
+
+exports.getImageUser = async (req, res) => {
+    try {
+        const fileName = req.params.fileName;
+        const pathFile = './uploads/users/' + fileName;
+
+        const image = fs.existsSync(pathFile);
+        if (!image) {
+            return res.status(404).send({ message: 'Imagen no encontrada' });
+        } else {
+            return res.sendFile(path.resolve(pathFile));
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo la imagen' });
     }
 }
