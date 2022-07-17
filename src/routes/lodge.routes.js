@@ -18,8 +18,8 @@ api.put('/updateLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], lodgeController
 
 
 // Funciones de Clientes
-api.get('/getLodgesClients', lodgeController.getLodges_OnlyClient);
-api.get('/getLodgeClient/:id', lodgeController.getLodge_OnlyClient);
+api.get('/getLodgesClients', [mdAuth.ensureAuth, mdAuth.isClient],lodgeController.getLodges_OnlyClient);
+api.get('/getLodgeClient/:id', [mdAuth.ensureAuth, mdAuth.isClient],lodgeController.getLodge_OnlyClient);
 
 // Agregar Imagen
 api.post('/uploadImageLodge/:id', [mdAuth.ensureAuth, mdAuth.isAdmin, upload], lodgeController.uploadImageLodge);

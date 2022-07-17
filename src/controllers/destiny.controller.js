@@ -3,6 +3,7 @@
 const Destiny = require('../models/destiny.model');
 const Trip = require('../models/trip.model');
 const Lodge = require('../models/lodge.model');
+const User = require('../models/user.model');
 const { validateData, searchDestiny, checkUpdate } = require('../utils/validate');
 
 exports.test = (req, res) => {
@@ -14,6 +15,7 @@ exports.test = (req, res) => {
 exports.addDestiny = async (req, res) => {
     try {
         const params = req.body;
+        const userId = req.user.sub;
         const data = {
             startDate: params.startDate,
             endDate: params.endDate,
@@ -22,19 +24,25 @@ exports.addDestiny = async (req, res) => {
         }
         const msg = validateData(data);
         if (!msg) {
-            const tripExist = await Trip.findOne({ _id: data.trip });
-            if (!tripExist) {
-                return res.status(400).send({ message: 'Viaje no encontrado' });
-            } else {
-                const lodgeExist = await Lodge.findOne({ _id: data.lodge });
-                if (!lodgeExist) {
-                    return res.status(400).send({ message: 'Hospedaje no encontrado' });
+            const userExist = await User.findOne({_id: userId});
+            if(!userExist){
+                return res.status(400).send({message:'Usuario no encontrado'});
+            }else{
+                const tripExist = await Trip.findOne({ _id: data.trip });
+                if (!tripExist) {
+                    return res.status(400).send({ message: 'Viaje no encontrado' });
                 } else {
-                    const destiny = new Destiny(data);
-                    await destiny.save();
-                    return res.send({ message: 'Destino creado satisfactoriamente', destiny })
+                    const lodgeExist = await Lodge.findOne({ _id: data.lodge });
+                    if (!lodgeExist) {
+                        return res.status(400).send({ message: 'Hospedaje no encontrado' });
+                    } else {
+                        const destiny = new Destiny(data);
+                        await destiny.save();
+                        return res.send({ message: 'Destino creado satisfactoriamente', destiny })
+                    }
                 }
             }
+            
         } else {
             return res.status(400).send(msg);
         }
