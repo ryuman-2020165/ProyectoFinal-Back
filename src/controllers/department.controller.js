@@ -41,29 +41,36 @@ exports.updateDepartment = async (req, res) => {
         const departmentId = req.params.id;
         const params = req.body;
         const validateUpdate = await checkUpdate(params);
-        if (validateUpdate === false) return res.status(400).send({ message: 'No se pueden actualizó o no hay parámetros válidos' })
+        if (validateUpdate === false) return res.status(400).send({ message: 'No se pueden actualizar o no hay parámetros válidos' })
         const checkExist = await Department.findOne({ _id: departmentId }).lean()
         if (!checkExist) {
-            return res.status(400).send({ message: 'No se ha encontrado este departamento' });
+            return res.status(400).send({ message: 'No se ha encontrado una categoria' });
         } else {
             const departmentExist = await searchDepartment(params.name);
             if (departmentExist) {
-                return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
+                //return res.send({ message: 'Ya existe una categoria con el mismo nombre' });
+                delete params.name;
+                const updatedDepartment = await Department.findOneAndUpdate({_id: departmentId}, params, {new: true})
+                if (!updatedDepartment) {
+                    return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
+                } else {
+                    return res.send({ message: 'Departamento actualizado', updatedDepartment })
+                }
+
             } else {
                 const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, params, { new: true })
                 if (!updatedDepartment) {
                     return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
                 } else {
-                    return res.send({ message: 'Departamento Actualizado', updatedDepartment })
+                    return res.send({ message: 'Departamento actualizado', updatedDepartment })
                 }
             }
         }
     } catch (err) {
         console.log(err);
-        return res.status(500).send({ err, message: 'Error atualizando la categoria' });
+        return res.status(500).send({ err, message: 'Error atualizando el departamento' });
     }
 }
-
 exports.deleteDepartment = async (req, res) => {
     try {
         const departmentId = req.params.id;
