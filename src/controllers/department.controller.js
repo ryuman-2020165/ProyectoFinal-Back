@@ -41,36 +41,32 @@ exports.updateDepartment = async (req, res) => {
         const departmentId = req.params.id;
         const params = req.body;
         const validateUpdate = await checkUpdate(params);
-        if (validateUpdate === false) return res.status(400).send({ message: 'No se pueden actualizar o no hay parámetros válidos' })
-        const checkExist = await Department.findOne({ _id: departmentId }).lean()
-        if (!checkExist) {
-            return res.status(400).send({ message: 'No se ha encontrado una categoria' });
-        } else {
-            const departmentExist = await searchDepartment(params.name);
-            if (departmentExist) {
-                //return res.send({ message: 'Ya existe una categoria con el mismo nombre' });
-                delete params.name;
-                const updatedDepartment = await Department.findOneAndUpdate({_id: departmentId}, params, {new: true})
-                if (!updatedDepartment) {
-                    return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
-                } else {
-                    return res.send({ message: 'Departamento actualizado', updatedDepartment })
-                }
-
+        if (validateUpdate === false){
+            return res.status(400).send({ message: 'No se pueden actualizar o no hay parámetros válidos' })
+        }else{
+            const checkExist = await Department.findOne({ _id: departmentId }).lean()
+            if (!checkExist) {
+                return res.status(400).send({ message: 'No se ha encontrado el departamento' });
             } else {
-                const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, params, { new: true })
-                if (!updatedDepartment) {
-                    return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
-                } else {
-                    return res.send({ message: 'Departamento actualizado', updatedDepartment })
+                const departmentExist = await searchDepartment(params.name);
+                if (departmentExist) {
+                    return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
+                }else{
+                    const updatedDepartment = await Department.findOneAndUpdate({_id: departmentId}, params, {new: true})
+                    if (!updatedDepartment) {
+                        return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
+                    } else {
+                        return res.send({ message: 'Departamento actualizado', updatedDepartment })
+                    }
                 }
             }
         }
-    } catch (err) {
+    } catch(err) {
         console.log(err);
-        return res.status(500).send({ err, message: 'Error atualizando el departamento' });
+        return res.status(500).send({ err, message: 'Error actualizando el departamento' });
     }
 }
+
 exports.deleteDepartment = async (req, res) => {
     try {
         const departmentId = req.params.id;
@@ -105,7 +101,7 @@ exports.getDepartments = async (req, res) => {
 exports.getDepartmentById = async (req, res) => {
     try {
         const departmentId = req.params.id;
-        const findDepartment = await Department.find({ _id: departmentId }).lean()
+        const findDepartment = await Department.findOne({ _id: departmentId }).lean()
         if (findDepartment.length == 0) {
             return res.status(400).send({ message: 'No se ha encontrado el departamento' });
         } else {
