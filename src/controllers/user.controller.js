@@ -147,6 +147,21 @@ exports.getUsers = async (req, res) => {
     }
 }
 
+exports.getUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const findUser = await User.findOne({ _id: userId }).lean()
+        if (findUser.length == 0) {
+            return res.status(400).send({ message: 'No se ha encontrado el usuario' });
+        } else {
+            return res.send({ message: 'Categoria encontrada:', findUser })
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ err, message: 'Error obteniendo el usuario' });
+    }
+}
+
 exports.updateUser = async(req, res)=>{
     try{
          
