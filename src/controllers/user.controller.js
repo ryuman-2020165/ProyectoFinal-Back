@@ -133,6 +133,20 @@ exports.saveUser = async(req, res)=>{
     }
 }
 
+exports.getUsers = async (req, res) => {
+    try {
+        const findUsers = await User.find({}).lean()
+        if (findUsers.length == 0) {
+            return res.status(400).send({ message: 'No se han encontrado usuarios' });
+        } else {
+            return res.send({ message: 'usuerios encontrados', findUsers })
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ err, message: 'Error obteniendo los usuarios' });
+    }
+}
+
 exports.updateUser = async(req, res)=>{
     try{
          
