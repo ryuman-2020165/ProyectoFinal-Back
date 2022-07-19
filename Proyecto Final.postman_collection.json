@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "654ad92e-1fcc-4364-9a27-81c3d95ff9be",
+		"_postman_id": "e78e69a4-097d-4d63-a263-3c4062791ba8",
 		"name": "Proyecto Final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20824077"
+		"_exporter_id": "19254100"
 	},
 	"item": [
 		{
@@ -116,7 +116,7 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "esinay1",
+											"value": "ADMIN",
 											"type": "default"
 										},
 										{
@@ -147,7 +147,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MjAxMDQxLCJleHAiOjE2NTgyMTE4NDF9.nmtRLP7LQZ10rwtSHmx-cVMKRiAZd89GXjm-NZgdDDc\"",
 										"type": "text"
 									}
 								],
@@ -157,7 +157,7 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/C:/Users/jmedi/Downloads/CV.jpeg"
+											"src": "/C:/Users/jmili/Downloads/IMG_20220708_161804.jpg"
 										}
 									]
 								},
@@ -772,7 +772,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTI0NzUxLCJleHAiOjE2NTc5MzU1NTF9.dr2-YvbhrYTHvCWuYlkRgD8E9wrpFaFJSDxN3ZSS2tk",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MjAxMDQxLCJleHAiOjE2NTgyMTE4NDF9.nmtRLP7LQZ10rwtSHmx-cVMKRiAZd89GXjm-NZgdDDc\"",
 										"type": "text"
 									}
 								],
@@ -781,7 +781,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Zacapa",
+											"value": "Zacapaa",
 											"type": "text"
 										},
 										{
@@ -971,6 +971,62 @@
 										"department",
 										"getDepartment",
 										"62d1f1dd28ee37bea0d6c28a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar imágen",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MjAxMDQxLCJleHAiOjE2NTgyMTE4NDF9.nmtRLP7LQZ10rwtSHmx-cVMKRiAZd89GXjm-NZgdDDc\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/jmili/Downloads/logopop.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/department/uploadImageDepartment/62d624822fe8d59207d81439",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"department",
+										"uploadImageDepartment",
+										"62d624822fe8d59207d81439"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar imagen",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/department/getImageLodge/",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"department",
+										"getImageLodge",
+										""
 									]
 								}
 							},
@@ -1187,7 +1243,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MDkwMzM2LCJleHAiOjE2NTgxMDExMzZ9.selnFn3tWmqqwxm7M_XUMcLz3kUz1tMKkGzjUt0xDOo",
+												"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQzMjc5YTFhZjJhNTlkYTY1ZjIwMGEiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU4MjAxMDQxLCJleHAiOjE2NTgyMTE4NDF9.nmtRLP7LQZ10rwtSHmx-cVMKRiAZd89GXjm-NZgdDDc\"",
 												"type": "text"
 											}
 										],
@@ -1197,12 +1253,12 @@
 												{
 													"key": "image",
 													"type": "file",
-													"src": "/C:/Users/jmedi/Downloads/1111111111111111.jpeg"
+													"src": "/C:/Users/jmili/Downloads/logopop.png"
 												}
 											]
 										},
 										"url": {
-											"raw": "localhost:3200/lodge/uploadImageLodge/62d24f9af9f9a14d4aebfcc9",
+											"raw": "localhost:3200/lodge/uploadImageLodge/62d329551af2a59da65f2025",
 											"host": [
 												"localhost"
 											],
@@ -1210,7 +1266,7 @@
 											"path": [
 												"lodge",
 												"uploadImageLodge",
-												"62d24f9af9f9a14d4aebfcc9"
+												"62d329551af2a59da65f2025"
 											]
 										}
 									},

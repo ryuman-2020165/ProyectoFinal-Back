@@ -155,3 +155,20 @@ exports.uploadImageDepartament = async (req, res) => {
         return res.status(500).send({ message: 'Error subiendo imágen' })
     }
 }
+
+exports.getImageDepartment = async (req, res) => {
+    try {
+        const fileName = req.params.fileName;
+        const pathFile = './uploads/departments' + fileName;
+
+        const image = fs.existsSync(pathFile);
+        if (!image) {
+            return res.status(404).send({ message: 'Imagen no encontrada' })
+        } else {
+            return res.sendFile(path.resolve(pathFile))
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo la imágen' })
+    }
+}
