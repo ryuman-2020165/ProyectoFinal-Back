@@ -14,7 +14,7 @@ api.get('/pruebaUser', userController.prueba);
 //CLIENT
 api.post('/register', userController.register);
 api.post('/login', userController.login);
-api.put('/update/:id', mdAuth.ensureAuth, userController.update);
+api.put('/update', mdAuth.ensureAuth, userController.update);
 api.delete('/delete/:id', mdAuth.ensureAuth, userController.delete);
 
 //FUNCIONES PRIVADAS

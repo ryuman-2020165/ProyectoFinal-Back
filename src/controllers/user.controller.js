@@ -67,7 +67,7 @@ exports.login = async(req, res)=>{
 
 exports.update = async(req, res)=>{
     try{
-        const userId = req.params.id;
+        const userId = req.user.sub;
         const params = req.body;
 
         const permission = await checkPermission(userId, req.user.sub);
