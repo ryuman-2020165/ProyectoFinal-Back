@@ -2,7 +2,9 @@
 'use strict'
 
 const Department = require('../models/department.model');
-const { validateData, searchDepartment, checkUpdate } = require('../utils/validate');
+const { validateData, searchDepartment, checkUpdate, validateExtension } = require('../utils/validate');
+const fs = require('fs');
+const path = require('path');
 
 exports.testDepartment = (req, res) => {
     return res.send({ message: 'Mensaje de departamento funcionando correctamente' });
@@ -41,25 +43,18 @@ exports.updateDepartment = async (req, res) => {
         const departmentId = req.params.id;
         const params = req.body;
         const validateUpdate = await checkUpdate(params);
-        if (validateUpdate === false){
+        if (validateUpdate === false) {
             return res.status(400).send({ message: 'No se pueden actualizar o no hay parámetros válidos' })
-        }else{
+        } else {
             const checkExist = await Department.findOne({ _id: departmentId }).lean()
             if (!checkExist) {
                 return res.status(400).send({ message: 'No se ha encontrado el departamento' });
             } else {
                 const departmentExist = await searchDepartment(params.name);
                 if (departmentExist) {
-                    //return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
-                    delete params.name
-                    const updatedDepartment = await Department.findOneAndUpdate({_id: departmentId}, params, {new: true})
-                    if (!updatedDepartment) {
-                        return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
-                    } else {
-                        return res.send({ message: 'Departamento actualizado', updatedDepartment })
-                    }
-                }else{
-                    const updatedDepartment = await Department.findOneAndUpdate({_id: departmentId}, params, {new: true})
+                    return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
+                } else {
+                    const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, params, { new: true })
                     if (!updatedDepartment) {
                         return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
                     } else {
@@ -68,7 +63,7 @@ exports.updateDepartment = async (req, res) => {
                 }
             }
         }
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         return res.status(500).send({ err, message: 'Error actualizando el departamento' });
     }
@@ -117,5 +112,46 @@ exports.getDepartmentById = async (req, res) => {
     } catch (err) {
         console.log(err);
         return res.status(500).send({ err, message: 'Error obteniendo el departamento' });
+    }
+}
+
+//Función para añadir imágen
+exports.uploadImageDepartament = async (req, res) => {
+    try {
+        const departmentId = req.params.id;
+        const alreadyImage = await Department.findOne({ _id: departmentId });
+        let pathFile = './uploads/departments';
+
+        if (alreadyImage.image) {
+            fs.unlinkSync(pathFile + alreadyImage.image);
+        }
+
+        if (!req.files.image || !req.files.image.type) {
+            return res.status(400).send({ message: 'no se ha enviado una imágen' })
+
+        } else {
+            const filePath = req.files.image.path;
+            const fileSplit = filePath.split('\\');// fileSplit = ['uploads', 'users', 'file_name.ext']
+            const fileName = fileSplit[2];
+
+            const extension = fileName.split('\.');
+            const fileExt = extension[1];
+
+            const validExt = await validateExtension(fileExt, filePath)
+            if (validExt === false) {
+                return res.status(400).send({ message: 'Extensión inválida' });
+            } else {
+                const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, { image: fileName }, { new: true });
+                if (!updatedDepartment) {
+                    return res.status(404).send({ message: 'Departamento no encontrado' })
+                } else {
+                    return res.status(200).send({ message: 'Imágen añadida', updatedDepartment })
+                }
+            }
+
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error subiendo imágen' })
     }
 }
