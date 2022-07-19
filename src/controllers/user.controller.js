@@ -265,3 +265,21 @@ exports.getImageUser = async (req, res) => {
         return res.status(500).send({ message: 'Error obteniendo la imagen' });
     }
 }
+
+exports.myProfile = async (req, res) => {
+    try {
+        const userId = req.user.sub;
+        const user = await User.findOne({ _id: userId }).lean();
+        delete user.password;
+        delete user.role;
+        delete user.__v
+        if (!user) {
+            return res.status(403).send({ message: 'El usuario ingresado no se ha podido encontrar' })
+        } else {
+            return res.send({ message: 'Este es tu usuario:', user });
+        }
+    } catch (err) {
+        console.log(err)
+        return res.status(500).send({ message: 'Error obteniendo el usuario' });
+    }
+};

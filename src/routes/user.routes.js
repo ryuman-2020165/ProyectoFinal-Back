@@ -23,7 +23,8 @@ api.post('/saveUser', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.saveUs
 api.put('/updateUser/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.updateUser);
 api.delete('/deleteUser/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], userController.deleteUser); 
 api.get('/getUsers', [mdAuth.ensureAuth,mdAuth.isAdmin], userController.getUsers);
-api.get('/getUser/:id',[mdAuth.ensureAuth,mdAuth.isAdmin], userController.getUser)
+api.get('/getUser/:id',[mdAuth.ensureAuth,mdAuth.isAdmin], userController.getUser);
+api.get('/myProfile', mdAuth.ensureAuth, userController.myProfile);
 
 
 //IMAGENES 
