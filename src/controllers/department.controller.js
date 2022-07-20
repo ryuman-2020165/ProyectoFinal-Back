@@ -52,7 +52,15 @@ exports.updateDepartment = async (req, res) => {
             } else {
                 const departmentExist = await searchDepartment(params.name);
                 if (departmentExist) {
-                    return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
+                   // return res.send({ message: 'Ya existe un departamento con el mismo nombre' });
+                   delete departmentExist.name;
+                   const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, params, { new: true })
+                   if (!updatedDepartment) {
+                       return res.status(400).send({ message: 'No se ha podido actualizar el departamento' });
+                   } else {
+                       return res.send({ message: 'Departamento actualizado', updatedDepartment })
+                   }
+                
                 } else {
                     const updatedDepartment = await Department.findOneAndUpdate({ _id: departmentId }, params, { new: true })
                     if (!updatedDepartment) {
