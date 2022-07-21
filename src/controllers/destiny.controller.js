@@ -52,7 +52,7 @@ exports.addDestiny = async (req, res) => {
     }
 }
 
-exports.deleteDestiny_OnlyAdmin = async (req, res) => {
+exports.deleteDestiny_OnlyClient = async (req, res) => {
     try {
         const destinyId = req.params.id;
         const deleteDestiny = await Destiny.findOneAndDelete({ _id: destinyId });
@@ -67,7 +67,7 @@ exports.deleteDestiny_OnlyAdmin = async (req, res) => {
     }
 }
 
-exports.updateDestiny_OnlyAdmin = async (req, res) => {
+exports.updateDestiny_OnlyClient = async (req, res) => {
     try {
         const destinyId = req.params.id;
         const params = req.body;
