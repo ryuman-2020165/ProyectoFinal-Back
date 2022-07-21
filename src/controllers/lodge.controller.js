@@ -144,7 +144,7 @@ exports.deleteLodge_OnlyAdmin = async (req, res) => {
 
 exports.getLodges_OnlyClient = async (req, res) => {
     try {
-        const lodges = await Lodge.find()
+        const lodges = await Lodge.find().populate('department').populate('category')
         if (!lodges) {
             return res.status(400).send({ message: 'Hospedajes no encontrados' });
         } else {
