@@ -51,7 +51,7 @@ exports.updateCategory = async (req, res) => {
                 if (!updatedCategory) {
                     return res.status(400).send({ message: 'No se ha podido actualizar la categoria' });
                 } else {
-                    return res.send({ message: 'Categoria actualizada', updatedCategory })
+                    return res.send({ message: 'Categoria actualizada, nombre en uso', updatedCategory })
                 }
 
             } else {

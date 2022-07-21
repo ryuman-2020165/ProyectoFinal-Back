@@ -63,7 +63,7 @@ exports.addLodge = async (req, res) => {
 
 exports.getLodges_OnlyAdmin = async (req, res) => {
     try {
-        const lodges = await Lodge.find().populate('user');
+        const lodges = await Lodge.find().populate('user').populate('department').populate('category');
         if (!lodges) {
             return res.status(400).send({ message: 'Hospedajes no encontrados' });
         } else {
@@ -102,9 +102,16 @@ exports.updateLodge_OnlyAdmin = async (req, res) => {
         } else {
             const lodgeExist = await searchLodge(params.name);
             if (lodgeExist) {
-                return res.send({ message: 'Ya existe un lodge con el mismo nombre' });
+               // return res.send({ message: 'Ya existe un lodge con el mismo nombre' });
+               delete params.name
+               const updateLodge = await Lodge.findOneAndUpdate({ _id: lodgeId }, params, { new: true }).populate('department')
+                if (!updateLodge) {
+                    return res.status(400).send({ message: 'No se ha podido actualizar el hospedaje' })
+                } else {
+                    return res.send({ message: 'Lodge Actualizado, nombre en uso', updateLodge })
+                }
             } else {
-                const updateLodge = await Lodge.findOneAndUpdate({ _id: lodgeId }, params, { new: true })
+                const updateLodge = await Lodge.findOneAndUpdate({ _id: lodgeId }, params, { new: true }).populate('department')
                 if (!updateLodge) {
                     return res.status(400).send({ message: 'No se ha podido actualizar el hospedaje' })
                 } else {

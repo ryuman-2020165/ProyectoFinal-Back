@@ -49,13 +49,13 @@ exports.updateTrip = async (req, res) => {
             const tripExist = await searchTrip(params.name);
             if (tripExist) {
                 //return res.send({ message: 'ya existe un viaje con este nombre' });
-                delete tripExist.name;
+                delete params.name;
 
                 const updatedTrip = await Trip.findOneAndUpdate({ _id: tripId }, params, { new: true });
                 if (!updatedTrip) {
                     return res.status(400).send({ message: 'No se ha podido actualizar el viaje' });
                 } else {
-                    return res.send({ message: 'Viaje actualizado', updatedTrip });
+                    return res.send({ message: 'Viaje actualizado, nombre en uso', updatedTrip });
                 }
 
             } else {
