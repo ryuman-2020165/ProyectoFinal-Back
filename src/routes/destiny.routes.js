@@ -8,7 +8,7 @@ const mdAuth = require('../services/authenticated');
 // Funciones de Admin
 api.get('/test', destinyController.test);
 
-api.get('/getDestinys', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestinys_OnlyAdmin);
+//api.get('/getDestinys', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestinys_OnlyAdmin);
 api.get('/getDestiny/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestiny_OnlyAdmin);
 
 

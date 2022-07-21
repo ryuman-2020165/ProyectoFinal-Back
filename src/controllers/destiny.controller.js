@@ -90,9 +90,9 @@ exports.updateDestiny_OnlyClient = async (req, res) => {
     }
 }
 
-exports.getDestinys_OnlyAdmin = async (req, res) => {
+exports.getDestinys_OnlyClient = async (req, res) => {
     try {
-        const destinys = await Destiny.find().populate('trip').lean();
+        const destinys = await Destiny.find().populate('trip').populate('lodge').lean();
         if (!destinys) {
             return res.status(400).send({ message: 'Destinos no encontrados' });
         } else {
@@ -107,7 +107,7 @@ exports.getDestinys_OnlyAdmin = async (req, res) => {
 exports.getDestiny_OnlyAdmin = async (req, res) => {
     try {
         const destinyId = req.params.id;
-        const destiny = await Destiny.findOne({ _id: destinyId }).populate('trip').lean();
+        const destiny = await Destiny.findOne({ _id: destinyId }).populate('trip');
         if (!destiny) {
             return res.status(400).send({ message: 'Destino no encontrado' });
         } else {
@@ -120,20 +120,6 @@ exports.getDestiny_OnlyAdmin = async (req, res) => {
 }
 
 //* Funciones de usuario registrado ---------------------------------------------------------------------------------------
-
-exports.getDestinys_OnlyClient = async (req, res) => {
-    try {
-        const destinys = await Destiny.find()
-        if (!destinys) {
-            return res.status(400).send({ message: 'Destinos no encontrados' });
-        } else {
-            return res.send({ messsage: 'Destinos encontrados:', destinys });
-        }
-    } catch (err) {
-        console.log(err);
-        return res.status(500).send({ message: 'Error obteniendo estos destinos' });
-    }
-}
 
 exports.getDestiny_OnlyClient = async (req, res) => {
     try {
