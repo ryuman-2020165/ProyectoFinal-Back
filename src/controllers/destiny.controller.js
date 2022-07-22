@@ -167,15 +167,19 @@ exports.getDestinys_OnlyAdmin = async (req, res) => {
 
 exports.getDestinys_OnlyClient = async (req, res) => {
     try {
-        const destinys = await Destiny.find().populate('trip').populate('lodge').lean();
-        if (!destinys) {
-            return res.status(400).send({ message: 'Destinos no encontrados' });
+        const userId = req.user.sub
+        const destinys = await Destiny.find({ user: userId })
+            .populate('lodge') 
+            .populate('trip')
+            .lean()
+        if (destinys.length === 0) {
+            return res.send({ message: 'No hay ningún destino para mostrar' })
         } else {
-            return res.send({ messsage: 'Destinos encontrados:', destinys });
+            return res.send({ destinys })
         }
     } catch (err) {
         console.log(err);
-        return res.status(500).send({ message: 'Error obteniendo estos destinos' });
+        return res.status(500).send({ message: 'Error obteniendo el destino' });
     }
 }
 
@@ -214,7 +218,10 @@ exports.getDestiny_OnlyClient = async (req, res) => {
 exports.myDestiny = async (req, res) => {
     try {
         const userId = req.user.sub
-        const myDestiny = await Destiny.find({ user: userId }).lean()
+        const myDestiny = await Destiny.find({ user: userId })
+            .populate('lodge') 
+            .populate('trip')
+            .lean()
         if (myDestiny.length === 0) {
             return res.send({ message: 'No hay ningún destino para mostrar' })
         } else {
