@@ -46,7 +46,7 @@ exports.addDestiny = async (req, res) => {
                             today = new Date(today)
                             let differenceToday = date1.getTime() - today.getTime()
                             if (differenceToday < 0) {
-                                return res.status(400).send({ message: 'Ingresa una fecha de incio superior' })
+                                return res.status(400).send({ message: 'El viaje ya inició' })
                             } else {
                                 let difference = date2.getTime() - date1.getTime();
                                 if (difference < 0) {
