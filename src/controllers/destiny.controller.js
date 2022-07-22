@@ -73,6 +73,44 @@ exports.addDestiny = async (req, res) => {
         console.log(err);
         return res.status(500).send({ err, message: 'Error creando Destino' });
     }
+} 
+
+exports.deleteDestiny_OnlyAdmin = async (req, res) => {
+    try {
+        const destinyId = req.params.id;
+        const deleteDestiny = await Destiny.findOneAndDelete({ _id: destinyId });
+        if (!deleteDestiny) {
+            return res.status(404).send({ message: 'El destino no se ha econtrado o ya fue eliminado' });
+        } else {
+            return res.send({ message: 'Destino eliminado', deleteDestiny })
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ err, message: 'Error eliminando el destino' });
+    }
+}
+
+exports.updateDestiny_OnlyAdmin = async (req, res) => {
+    try {
+        const destinyId = req.params.id;
+        const params = req.body;
+        const validateUpdate = await checkUpdate(params);
+        if (validateUpdate === false) return res.status(400).send({ message: 'No se pueden actualizó o no hay parámetros válidos' })
+        const checkDestinyExist = await Destiny.findOne({ _id: destinyId }).lean();
+        if (!checkDestinyExist) {
+            return res.status(400).send({ message: 'No se ha encontrado el destino' });
+        } else {
+            const updateDestiny = await Destiny.findOneAndUpdate({ _id: destinyId }, params, { new: true })
+            if (!updateDestiny) {
+                return res.status(400).send({ message: 'No se ha podido actualizar el destino' })
+            } else {
+                return res.send({ message: 'Destino actualizado', updateDestiny })
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ err, message: 'Error actaulizando el destino' })
+    }
 }
 
 exports.deleteDestiny_OnlyClient = async (req, res) => {
@@ -110,6 +148,20 @@ exports.updateDestiny_OnlyClient = async (req, res) => {
     } catch (err) {
         console.log(err);
         return res.status(500).send({ err, message: 'Error actaulizando el destino' })
+    }
+} 
+
+exports.getDestinys_OnlyAdmin = async (req, res) => {
+    try {
+        const destinys = await Destiny.find().populate('trip').populate('lodge').lean();
+        if (!destinys) {
+            return res.status(400).send({ message: 'Destinos no encontrados' });
+        } else {
+            return res.send({ messsage: 'Destinos encontrados:', destinys });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: 'Error obteniendo estos destinos' });
     }
 }
 
