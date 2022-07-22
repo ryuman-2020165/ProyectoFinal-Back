@@ -17,8 +17,10 @@ api.get('/getDestinyAdmin/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyCont
 
 // Funciones de Clientes
 api.post('/addDestiny/:idTrip/:idLodge', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.addDestiny);
-api.get('/getDestinysClients',[mdAuth.ensureAuth, mdAuth.isClient], destinyController.getDestinys_OnlyClient);
-api.get('/getDestinyClient/:id', [mdAuth.ensureAuth, mdAuth.isClient],destinyController.getDestiny_OnlyClient);
+api.get('/getDestinysClients', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.getDestinys_OnlyClient);
+api.get('/getDestinyClient/:id', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.getDestiny_OnlyClient);
 api.put('/updateDestiny/:id', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.updateDestiny_OnlyClient);
 api.delete('/deleteDestiny/:id', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.deleteDestiny_OnlyClient);
+api.get('/myDestiny', [mdAuth.ensureAuth, mdAuth.isClient], destinyController.myDestiny);
+
 module.exports = api;

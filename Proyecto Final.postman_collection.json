@@ -16,7 +16,13 @@
 							"name": "Buscar hospedajes",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ5ZmI0Y2M2NDUzZGUwYzhjNjkzOTYiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTg0NTI4MjAsImV4cCI6MTY1ODQ2MzYyMH0.ehwhwvoRzWG8jHR1rga05hy5RtrqDAkkerg_GHDVreA\"",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "localhost:3200/lodge/getLodgesClients",
 									"host": [
@@ -72,12 +78,12 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "ale2",
+											"value": "yumana",
 											"type": "default"
 										},
 										{
 											"key": "username",
-											"value": "esinay1",
+											"value": "yuman",
 											"type": "default"
 										},
 										{
@@ -116,7 +122,7 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "ADMIN",
+											"value": "yuman",
 											"type": "default"
 										},
 										{
@@ -1127,7 +1133,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQxZWJlYzQ3ZWU5ZjM1NGU5NGNhM2UiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjU3OTg5MzA1LCJleHAiOjE2NTgwMDAxMDV9.GjvSr6lat24rXdc8HFo3LSE1j5m2l2g4ziXf6OeEHV4",
+												"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ5ZmI0Y2M2NDUzZGUwYzhjNjkzOTYiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTg0NTI4MjAsImV4cCI6MTY1ODQ2MzYyMH0.ehwhwvoRzWG8jHR1rga05hy5RtrqDAkkerg_GHDVreA\"",
 												"type": "text"
 											}
 										],
@@ -1137,22 +1143,26 @@
 												{
 													"key": "name",
 													"value": "Jefri6",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "description",
 													"value": "Jefri2",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "price",
 													"value": "400",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "popularity",
 													"value": "3",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "image",
@@ -1626,7 +1636,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmQ0ODIwYTU0Y2FmZWNmMzdiNjhhMDkiLCJuYW1lIjoiYWxlMiIsInVzZXJuYW1lIjoiZXNpbmF5MSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTgwOTg4NzcsImV4cCI6MTY1ODEwOTY3N30.9y50XNFbuN2vsbukgL426QqOONE7w4Ax976cS_YY0v8\"",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmRhMzYwODBiYmFmZTRiMGZlMDdjMzMiLCJuYW1lIjoieXVtYW5hIiwidXNlcm5hbWUiOiJ5dW1hbiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTg0Njc4NTUsImV4cCI6MTY1ODQ3ODY1NX0.wGpDFZ_kFddoVoutJj2S-oooEn-xLUBE7DSpFdLz_w4\"",
 										"type": "text"
 									}
 								],
@@ -1635,12 +1645,12 @@
 									"urlencoded": [
 										{
 											"key": "startDate",
-											"value": "2022-7-3",
+											"value": "2022-07-25",
 											"type": "text"
 										},
 										{
 											"key": "endDate",
-											"value": "2022-10-10",
+											"value": "2022-07-25",
 											"type": "text"
 										},
 										{
@@ -1652,7 +1662,7 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:3200/destiny/addDestiny/62d30767ba277b544dd02a33/62d24f9af9f9a14d4aebfcc9",
+									"raw": "localhost:3200/destiny/addDestiny/62d63fbc011044aefba14bb0/62d329551af2a59da65f2025",
 									"host": [
 										"localhost"
 									],
@@ -1660,8 +1670,8 @@
 									"path": [
 										"destiny",
 										"addDestiny",
-										"62d30767ba277b544dd02a33",
-										"62d24f9af9f9a14d4aebfcc9"
+										"62d63fbc011044aefba14bb0",
+										"62d329551af2a59da65f2025"
 									]
 								}
 							},
@@ -1796,6 +1806,31 @@
 										"destiny",
 										"getDestiny",
 										"62d307b9c984c50732e15b20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mi destino",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MmRhMzYwODBiYmFmZTRiMGZlMDdjMzMiLCJuYW1lIjoieXVtYW5hIiwidXNlcm5hbWUiOiJ5dW1hbiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTg0Njc4NTUsImV4cCI6MTY1ODQ3ODY1NX0.wGpDFZ_kFddoVoutJj2S-oooEn-xLUBE7DSpFdLz_w4\"",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3200/destiny/myDestiny",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"destiny",
+										"myDestiny"
 									]
 								}
 							},
