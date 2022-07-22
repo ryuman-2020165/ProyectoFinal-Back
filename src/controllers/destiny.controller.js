@@ -17,7 +17,6 @@ exports.addDestiny = async (req, res) => {
         const params = req.body;
         const userId = req.user.sub;
         const data = {
-            startDate: params.startDate,
             endDate: params.endDate,
             trip: req.params.idTrip,
             lodge: req.params.idLodge,
@@ -33,6 +32,7 @@ exports.addDestiny = async (req, res) => {
                 if (!tripExist) {
                     return res.status(400).send({ message: 'Viaje no encontrado' });
                 } else {
+                    data.startDate = tripExist.endDate
                     const lodgeExist = await Lodge.findOne({ _id: data.lodge });
                     if (!lodgeExist) {
                         return res.status(400).send({ message: 'Hospedaje no encontrado' });
@@ -55,6 +55,7 @@ exports.addDestiny = async (req, res) => {
                                     if (difference == 0) {
                                         return res.status(400).send({ message: 'No puedes establecer la mismas fechas' })
                                     } else {
+                                        
                                         const destiny = new Destiny(data);
                                         await destiny.save();
                                         return res.send({ message: 'Destino creado satisfactoriamente', destiny })
