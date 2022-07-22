@@ -7,9 +7,11 @@ const mdAuth = require('../services/authenticated');
 
 // Funciones de Admin
 api.get('/test', destinyController.test);
+api.put('/updateDestinyAdmin/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.updateDestiny_OnlyAdmin);
+api.delete('/deleteDestinyAdmin/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.deleteDestiny_OnlyAdmin);
 
-//api.get('/getDestinys', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestinys_OnlyAdmin);
-api.get('/getDestiny/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestiny_OnlyAdmin);
+api.get('/getDestinysAdmin', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestinys_OnlyAdmin);
+api.get('/getDestinyAdmin/:id', [mdAuth.ensureAuth, mdAuth.isAdmin], destinyController.getDestiny_OnlyAdmin);
 
 
 
