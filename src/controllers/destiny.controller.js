@@ -187,7 +187,7 @@ exports.getDestinys_OnlyClient = async (req, res) => {
 exports.getDestiny_OnlyAdmin = async (req, res) => {
     try {
         const destinyId = req.params.id;
-        const destiny = await Destiny.findOne({ _id: destinyId }).populate('trip');
+        const destiny = await Destiny.findOne({ _id: destinyId }).populate('trip').populate('lodge');
         if (!destiny) {
             return res.status(400).send({ message: 'Destino no encontrado' });
         } else {

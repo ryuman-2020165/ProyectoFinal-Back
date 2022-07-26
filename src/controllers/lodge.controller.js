@@ -108,20 +108,20 @@ exports.updateLodge_OnlyAdmin = async (req, res) => {
                 if (!updateLodge) {
                     return res.status(400).send({ message: 'No se ha podido actualizar el hospedaje' })
                 } else {
-                    return res.send({ message: 'Lodge Actualizado, nombre en uso', updateLodge })
+                    return res.send({ message: 'Hospedaje Actualizado, nombre en uso', updateLodge })
                 }
             } else {
                 const updateLodge = await Lodge.findOneAndUpdate({ _id: lodgeId }, params, { new: true }).populate('department')
                 if (!updateLodge) {
                     return res.status(400).send({ message: 'No se ha podido actualizar el hospedaje' })
                 } else {
-                    return res.send({ message: 'Lodge Actualizado', updateLodge })
+                    return res.send({ message: 'Hospedaje Actualizado', updateLodge })
                 }
             }
         }
     } catch (err) {
         console.log(err);
-        return res.status(500).send({ err, message: 'Error actualizando el lodge' })
+        return res.status(500).send({ err, message: 'Error actualizando el hospedaje' })
     }
 }
 
