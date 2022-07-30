@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 exports.init = () => {
-    const uriMongo = 'mongodb://127.0.0.1:27017/proyectoFinalInTravel';
+    const uriMongo = 'mongodb+srv://flopez:123@intravel.rptmg.mongodb.net/?retryWrites=true&w=majority';
     mongoose.Promise = global.Promise;
 
     mongoose.connection.on('error', () => {
